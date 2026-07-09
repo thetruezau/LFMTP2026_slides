@@ -1,0 +1,90 @@
+\section{Motivation}
+
+% -----------
+% FIRST FRAME
+
+\begin{frame}
+  \frametitle{Motivation}
+  
+  Autosubst is one of many libraries
+  \footnote{We will be focusing on the Autosubst 1 library, but many of the limitations mentioned are common across these tools.}
+  designed to facilitate much of the bureocratic work behind the formalization of calculi with binders, automating:
+  \begin{itemize}
+  \item<2-> Definitions of capture-avoinding substitution operations
+  \item<3-> Proofs using substituion lemmas  
+  \end{itemize}
+
+  \onslide<4->{ However, such automation features only work when the calculus and substitution operations are fairly simple. }
+
+\end{frame}
+
+% ------------
+% SECOND FRAME
+
+\begin{frame} % [fragile]
+  \frametitle{Various syntactic classes}
+  
+  One of the immediate limitations of Autosubst 1 is the use of calculi with many syntactic classes (which Autosubst 2 attemps to resolve).
+
+  \onslide<2->{
+    \begin{example}[System $\olb$]
+      \vspace{-1.5em} 
+      \begin{align*}
+        \text{(terms)} \hspace{-5em} &&\quad t,u &::= \lb x.t \mid
+                                                   \only<1-3>{ \der{x}{l} }
+                                                   \only<4->{ {\color{red} \der{x}{l}} }  \mid tl \\
+        \text{(lists)} \hspace{-5em} &&\quad l   &::= \nil \mid \cons{u}{l}    
+      \end{align*}
+      \vspace{-1.5em}
+    \end{example}}
+  
+  \onslide<3->{ In our case, a simple workaround is to use polymorphic list types. }
+  
+  \onslide<4->{ \vspace{-1em} \seprule \vspace{-1em} }
+  
+  \onslide<4->{ Another unusual aspect of the system above is that the variable does not exists \emph{per se}. }
+
+  \onslide<5->{ This forces a cut ($tl$) constructor on the substitution equation: \[ [u/x](\der{x}{l}) = u([u/x]l). \] }
+  
+\end{frame}
+
+% ------------
+% THIRD FRAME
+
+\begin{frame}
+  \frametitle{Various syntactic classes (cont.)}
+  
+  \begin{example}[System $\ulb$]
+    \vspace{-1em} 
+    \begin{align*}
+      \text{(terms)} \hspace{-5em} &&\quad P,Q      &::= \lb x.t \mid \app{E} \\
+      \text{(eliminations)} \hspace{-5em} &&\quad E &::= \only<1>{ x } \only<2->{ {\color{red} x} } \mid \hd{P} \mid EQ
+    \end{align*}
+    \vspace{-1em}
+  \end{example}
+  
+  \onslide<2->{ Here, the variable lives in the elimination class and is not a term. }
+
+  \onslide<3->{ Therefore, a similar forcing of constructor occurs on the substitution equation: \[ [P/x]x = {\color{red} hd}(P). \] }
+  
+\end{frame}
+
+% ------------
+% FOURTH FRAME
+
+\begin{frame}
+  \frametitle{Hereditary substitutions}
+
+  Another kind of unsupported substitution operation is the hereditary substitution.
+
+  Take as an example the $\beta$-normal terms of the ordinary $\lb$-calculus in vectorial notation,
+  \[ M, N ::= \lb x.M \mid x \vec{M},\]
+  and a closed substitution that normalizes by evaluation
+  \[ \sub{N}{x}{(x\vec{M})} = \sub{(\lb y.N)}{x}{(xM\vec{M})} . \]
+  
+\end{frame}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "../presentation"
+%%% End:
