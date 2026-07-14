@@ -1,0 +1,17 @@
+\begin{frame}
+  \frametitle{Various syntactic classes (cont.)}
+  
+  \begin{example}[System $\ulb$]
+    \vspace{-1em} 
+    \begin{align*}
+      \text{(terms)} \hspace{-5em} &&\quad P,Q      &::= \lb x.t \mid \app{E} \\
+      \text{(eliminations)} \hspace{-5em} &&\quad E &::= \only<1>{ x } \only<2->{ {\color{red} x} } \mid \hd{P} \mid EQ
+    \end{align*}
+    \vspace{-1em}
+  \end{example}
+  
+  \onslide<2->{ Here, the variable lives in the elimination class and is not a term. }
+
+  \onslide<3->{ Therefore, a similar forcing of constructor occurs on the substitution equation: \[ [P/x]x = {\color{red} hd}(P). \] }
+  
+\end{frame}

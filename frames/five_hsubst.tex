@@ -1,0 +1,25 @@
+\begin{frame}
+  \frametitle{Hereditary substitutions (cont.)}
+
+  \begin{example}[Tight system $\tolb$]
+    \vspace{-1em} 
+    \begin{align*}
+      \text{(terms)} \hspace{-5em} &&\quad t,u &::= \lb x.t \mid \der{x}{l} \mid (\lb x.t) (\cons ul) \\
+      \text{(lists)} \hspace{-5em} &&\quad l   &::= \nil \mid \cons ul
+    \end{align*}
+    \vspace{-1em}
+  \end{example}
+  
+  \onslide<2->{ In our tight systems, the generalised cut form $tl$ is replaced by $(\lb x.t) (\cons ul)$, creating the need of an operation on tight terms that propagates some cuts,
+    \[ @: terms \times lists \to terms. \] }
+  \vspace{-1em}
+  
+  \onslide<3->{ When defining a closed substitution, one has to further elaborate the variable equation:
+    \[ [u/x](\der{x}{l}) = u@([u/x]l). \] }
+  
+\end{frame}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "../presentation"
+%%% End:

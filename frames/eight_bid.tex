@@ -1,0 +1,20 @@
+\begin{frame}
+  \frametitle{Typing in $\ulb$}
+
+  \[
+    \infer{\SeqP{\Gamma}{\lb x^A.P}{A\imp B}}{\SeqP{\Gamma,x:A}{P}{B}} \qquad
+    \infer{\SeqP{\Gamma}{\app{E}}{B}}{\SeqE{\Gamma}{E}{B}}
+  \]
+  \vspace{1em}
+  \[
+    \infer{\SeqE{\Gamma,x:A}{x}{A}}{} \qquad
+    \infer{\SeqE{\Gamma}{EQ}{B}}{\SeqE{\Gamma}{E}{A\imp B} & \SeqP{\Gamma}{Q}{A}} \qquad
+    \infer{\SeqE{\Gamma}{\hd{P}}{A}}{\SeqP{\Gamma}{P}{A}}
+  \]
+  
+\end{frame}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "../presentation"
+%%% End:

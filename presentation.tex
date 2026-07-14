@@ -17,6 +17,7 @@
 \usetheme[progressbar=frametitle]{metropolis}
 
 %%% GRAPHICS %%%
+\usepackage[all]{xy}
 \usepackage{graphicx}
 \usepackage{pgfplots}
 \usepackage{tikz}
@@ -31,6 +32,7 @@
 \usepackage{dsfont}
 \usepackage{mathtools}
 \usepackage{listings}
+\usepackage{proof}
 
 %%% FLOATS %%%
 \usepackage{booktabs}
@@ -58,9 +60,24 @@
 
 
 \begin{document}
-\maketitle
 
+\maketitle
 \input{macros.tex}
-\input{chapters/motivation.tex}
-% \input{motivation.tex}
+
+\section{Motivation}
+\input{frames/one_motivation.tex}
+\input{frames/two_various_sc.tex}
+\input{frames/three_various_sc.tex}
+\input{frames/four_hsubst.tex}
+\input{frames/five_hsubst.tex}
+
+\section{The Various Systems}
+\input{frames/six_diagram.tex}
+\input{frames/seven_vec.tex}
+\input{frames/eight_bid.tex}
+
+\section{Comments on the Formalization}
+\input{frames/nine_items.tex}
+\input{frames/ten_example1.tex}
+
 \end{document}

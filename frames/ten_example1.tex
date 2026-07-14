@@ -1,0 +1,35 @@
+\begin{frame}[fragile]
+  \frametitle{What it looks like}
+  
+  \lstset{
+    basicstyle=\scriptsize\ttfamily,
+    breaklines=true,
+    frame=single
+  }
+  
+  \begin{lstlisting}[language=Coq]
+    From Autosubst ...
+    
+    Inductive term: Type :=
+    | Der (x: var) (l: list term)
+    | Abs (t: {bind term})
+    | Cut (t: term) (l: list term).
+
+    Instance Ids_term : Ids term. exact (fun x => Der x []). Defined.
+    Instance Rename_term : Rename term. derive. Defined.
+    
+    Fixpoint vsubst (sigma:var->term) (t: term) : term :=
+    match t with
+    | Der x l => Cut (sigma x) (mmap (vsubst sigma) l)
+    | Cut t l => Cut (vsubst sigma t) (mmap (vsubst sigma) l)
+    | Abs t => Abs (vsubst (up sigma) t)
+    end.
+    Instance Subst_term : Subst term. exact vsubst. Defined.
+  \end{lstlisting}
+    
+\end{frame}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "../presentation"
+%%% End:

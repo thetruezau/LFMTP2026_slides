@@ -1,0 +1,15 @@
+\begin{frame}
+  \frametitle{Hereditary substitutions}
+
+  Another kind of unsupported substitution operation is the hereditary substitution.
+
+  \onslide<2->{ Take as an example the $\beta$-normal terms of the ordinary $\lb$-calculus in vectorial notation, \[ M, N ::= \lb x.M \mid x \vec{M}, \] }
+  \vspace{-1em}
+  
+  \onslide<3->{ and a closed substitution that normalizes by evaluation:
+    \[ \sub{(\lb y.N)}{x}{(x M \vec{M})} = (\sub{M}{x}{N}) \vec{M} \ \footnote{For simplicity, let us assume that $x$ does not appear in $M$ and $\vec{M}$.} . \] }
+  \vspace{-1em}
+
+  \onslide<4->{ Our descriptions of subsystems will often use this notion of substitution. }
+  
+\end{frame}

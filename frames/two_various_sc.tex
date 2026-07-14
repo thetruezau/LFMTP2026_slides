@@ -1,0 +1,26 @@
+\begin{frame} % [fragile]
+  \frametitle{Various syntactic classes}
+  
+  One of the immediate limitations of Autosubst 1 is the use of calculi with many syntactic classes (which Autosubst 2 attemps to resolve).
+
+  \onslide<2->{
+    \begin{example}[System $\olb$]
+      \vspace{-1.5em} 
+      \begin{align*}
+        \text{(terms)} \hspace{-5em} &&\quad t,u &::= \lb x.t \mid
+                                                   \only<1-3>{ \der{x}{l} }
+                                                   \only<4->{ {\color{red} \der{x}{l}} }  \mid tl \\
+        \text{(lists)} \hspace{-5em} &&\quad l   &::= \nil \mid \cons{u}{l}    
+      \end{align*}
+      \vspace{-1.5em}
+    \end{example}}
+  
+  \onslide<3->{ In our case, a simple workaround is to use polymorphic list types. }
+  
+  \onslide<4->{ \vspace{-1em} \seprule \vspace{-1em} }
+  
+  \onslide<4->{ Another unusual aspect of the system above is that the variable does not exists \emph{per se}. }
+
+  \onslide<5->{ This forces a cut ($tl$) constructor on the substitution equation: \[ [u/x](\der{x}{l}) = u([u/x]l). \] }
+  
+\end{frame}
