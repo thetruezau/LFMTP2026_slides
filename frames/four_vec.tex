@@ -1,0 +1,23 @@
+\begin{frame}
+  \frametitle{System $\olb$}
+  
+  \begin{definition}[Syntax of $\olb$]
+    \vspace{-1.5em} 
+    \begin{align*}
+      \text{(terms)} \hspace{-5em} &&\quad t,u &::= \lb x.t \mid
+                                                 \only<1>{ \der{x}{l} }
+                                                 \only<2->{ {\color{red} \der{x}{l}} }  \mid tl \\
+      \text{(lists)} \hspace{-5em} &&\quad l   &::= \nil \mid \cons{u}{l}    
+    \end{align*}
+  \end{definition}
+  
+  \onslide<2->{ Another unusual aspect of the system above is that the variable does not exists \emph{per se}. }
+
+  \onslide<3->{ This forces a cut ($tl$) constructor on the substitution equation: \[ [u/x](\der{x}{l}) = u([u/x]l). \] }
+  
+\end{frame}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "../presentation"
+%%% End:
