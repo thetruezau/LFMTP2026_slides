@@ -1,0 +1,24 @@
+\begin{frame}
+  \frametitle{Hereditary substitution}
+
+  % Another kind of unsupported substitution operation is the hereditary substitution.
+  % \onslide<2->{ Take as an example the $\beta$-normal terms of the ordinary $\lb$-calculus in vectorial notation,
+
+  \begin{definition}[Vectorial syntax of $\lb$-terms in $\beta$-nf]
+    \[ M, N ::= \lb x.M \mid x \vec{M} \]
+  \end{definition}
+  
+  \onslide<2->{
+    Defining a substitution that preserves $\beta$-normal forms leads to the following equation,
+    \[ \sub{(\lb y.N)}{x}{(x M \vec{M})} = (\sub{M}{x}{N}) @ \vec{M}, \]
+    where one needs to continuously reduce the term and properly aggregate the applications.
+  }
+  
+  \onslide<3->{ This substitution operation is highly unconventional, as it does more than propagating the operation until it reaches a variable and its non-structural definition does not even assure termination. }
+  
+\end{frame}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "../presentation"
+%%% End:

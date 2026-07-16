@@ -1,0 +1,27 @@
+\begin{frame}
+  \frametitle{System F}
+
+  \begin{definition}[Syntax for terms and simple types]
+    \vspace{-1em}
+    \begin{align*}
+    \text{(terms)} \hspace{-5em} &&\quad M, N &::= x \mid \lb x.M \mid M N \mid \Lambda X.M \mid M A \\
+    \text{(types)} \hspace{-5em} &&\quad A, B &::= X \mid A \imp B \mid \Pi X.A
+    \end{align*}
+    \vspace{-1em}
+  \end{definition}
+
+  \onslide<2->{
+    For each binding constructor, we have the expected substitution operations:
+    \[ M[N/x] \quad \qquad A[B/X] \quad \qquad M[B/X] . \]
+  }
+  
+  \onslide<3->{
+    The correct definitions for $M[N/x]$ and $M[B/X]$ are elaborate because of the mutual dependencies, but this as received proper attention when it comes to automation techniques due to the POPLmark challenges.
+  }
+  
+\end{frame}
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "../presentation"
+%%% End:
