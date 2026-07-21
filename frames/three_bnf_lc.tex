@@ -10,11 +10,15 @@
   
   \onslide<2->{
     Defining a substitution that preserves $\beta$-normal forms leads to the following equation,
-    \[ \sub{(\lb y.N)}{x}{(x M \vec{M})} = (\sub{M}{x}{N}) @ \vec{M}, \]
-    where one needs to continuously reduce the term and properly aggregate the applications.
+    \[ \xymatrix{
+        & \sub{(\lb y.N)}{x}{(x M \vec{M})} = (\sub{M}{x}{N}) @ \vec{M}, &
+        \only<3->{ \text{Unconventional!} \ar@{.}@/^1pc/[ll] \ar@{.}@/_1pc/[ll] }
+      }
+    \]
+    where one needs to continuously reduce the head term and properly aggregate the following applications (@ operation).
   }
   
-  \onslide<3->{ This substitution operation is highly unconventional, as it does more than propagating the operation until it reaches a variable and its non-structural definition does not even assure termination. }
+  \onslide<4->{ This substitution operation is unconventional, as it is not a mere replacement of a free occurrence, and its non-structural definition does not even assure termination. }
   
 \end{frame}
 

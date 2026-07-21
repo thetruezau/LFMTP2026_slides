@@ -2,16 +2,34 @@
   \frametitle{The Various Systems}
 
   % In our work, the target of formalization was the following:
-  
+
+  \vspace{-1.5em}  
   \[
     \xymatrix{
-      \olb \ar[rr]^{\Theta} \ar[dd]^{\tau}& &\ulb \ar@<1ex>[ll]^{\Psi} \ar[dd]^{\tau}\\
-      \\
-      \tolb \ar[rr]^{\Theta}& &\tulb \ar@<1ex>[ll]^{\Psi} \ar@<1ex>[ddl]^{\fgt{\cdot}} \\
-      \\
-      &\lbd \ar[uur]^{\bid{(\cdot)}} \ar@{-->}[uul] &
+      &
+      \only<2->{ {\textbf{LJT} \atop \text{Herbelin}} \atop \text{Vector notation} }
+      \only<2->{ \ar@{.}@/^2pc/[rr] \ar@{.}@/_2pc/[rr] }
+      & \olb \ar[rr]^{\Theta} \ar[dd]^{\tau}
+      & & \ulb \ar@<1ex>[ll]^{\Psi} \ar[dd]^{\tau}
+      &
+      \only<3->{ {\text{\emph{Coercion calculus}} \atop \text{ Cervesato and Pfenning }} \atop \text{ Bidirectional syntax } }
+      \only<3->{ \ar@{.}@/^2pc/[ll] \ar@{.}@/_2pc/[ll] }
+      & 
+      \\ \\
+      &
+      \only<4->{ \ar@{.}@/^2pc/[rrrr] \ar@{.}@/_2pc/[rrrr] }
+      \only<4->{ \text{ Tight restrictions } }
+      & \tolb \ar[rr]^{\Theta}
+      & & \tulb \ar@<1ex>[ll]^{\Psi} \ar@<1ex>[ddl]^{\fgt{\cdot}}
+      & &
+      \\ \\
+      & & & \lbd \ar[uur]^{\bid{(\cdot)}} \ar@{-->}[uul]
+      & \onslide<5->{ \text{STLC} } \only<5->{ \ar@{.}@/^1pc/[ll] \ar@{.}@/_1pc/[ll] }
+      & &
     }
   \]
+
+  \onslide<6->{ Formalized metatheory: isomorphisms, subject reduction, confluence, conservativity of reduction and typing. }
   
 \end{frame}
 

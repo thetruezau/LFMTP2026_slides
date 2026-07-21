@@ -2,15 +2,21 @@
   \frametitle{Typing in $\ulb$}
 
   \[
-    \infer{\SeqP{\Gamma}{\lb x^A.P}{A\imp B}}{\SeqP{\Gamma,x:A}{P}{B}} \qquad
+    \infer[Intro]{\SeqP{\Gamma}{\lb x^A.P}{A\imp B}}{\SeqP{\Gamma,x:A}{P}{B}} \qquad
     \infer{\SeqP{\Gamma}{\app{E}}{B}}{\SeqE{\Gamma}{E}{B}}
   \]
   \vspace{1em}
   \[
-    \infer{\SeqE{\Gamma,x:A}{x}{A}}{} \qquad
-    \infer{\SeqE{\Gamma}{EQ}{B}}{\SeqE{\Gamma}{E}{A\imp B} & \SeqP{\Gamma}{Q}{A}} \qquad
+    \infer[Ax]{\SeqE{\Gamma,x:A}{x}{A}}{} \qquad
+    \infer[Elim]{\SeqE{\Gamma}{EQ}{B}}{\SeqE{\Gamma}{E}{A\imp B} & \SeqP{\Gamma}{Q}{A}} \qquad
     \infer{\SeqE{\Gamma}{\hd{P}}{A}}{\SeqP{\Gamma}{P}{A}}
   \]
+
+  \vspace{2em}
+  
+  \onslide<2->{
+    Note the two different typing relations $\SeqP{\Gamma}{P}{A}$ and $\SeqE{\Gamma}{E}{B}$.
+  }
   
 \end{frame}
 
