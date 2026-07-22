@@ -12,11 +12,17 @@
   
   \onslide<2->{ Here, the variable lives in the elimination class and is not a term. }
 
-  \onslide<3->{ Therefore, the $hd$ constructor is necessary on the variable substitution equation in order produce an elimination:
-    \[ [P/x]x = {\color{red} hd}(P). \] }
-  \vspace{-1em}
-  
-  \onslide<4->{ As before, a substitution $\sub Px$ is replacing a variable $x$, which does not belong to the class of terms. }
+  \onslide<3->{ Therefore, the $hd$ constructor is necessary on the variable substitution equation in order produce an elimination: }
+
+  \only<3>{ \[ [P/x]{ \color{red} x } = hd(P). \] }
+  \onslide<4->{
+    \[ \xymatrix@C=0pt{
+        [& P & / & x &]{ \color{red} x } = hd(P). \\
+        & \hspace{-1em} \text{ term } \ar@{.}@/_1pc/[u] &
+        & \text{ elim } \hspace{-1em} \ar@{.}@/^1pc/[u] & 
+      }
+    \]
+  }
   
 \end{frame}
 
