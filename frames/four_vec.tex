@@ -6,21 +6,24 @@
     \begin{align*}
       \text{(terms)} \hspace{-5em} &&\quad t,u &::= \lb x.t \mid
                                                  \only<1>{ \der{x}{l} }
-                                                 \only<2->{ {\color{red} \der{x}{l}} }  \mid tl \\
+                                                 \only<2->{ {\color{red} \der{x}{l}} }  \mid 
+                                                 \only<1-2>{ tl }
+                                                 \only<3->{ \underbrace{tl}_{\text{cut}} } \\
       \text{(lists)} \hspace{-5em} &&\quad l   &::= \nil \mid \cons{u}{l}    
     \end{align*}
   \end{definition}
   
   \onslide<2->{ An unusual aspect of the syntax above is that the variable does not exist \emph{per se}. }
 
-  \onslide<3->{ This forces the following substitution equation to create a cut ($tl$): }
+  \onslide<3->{ This forces the following substitution equation, which creates a cut: }
 
   \only<3>{ \[ [u/x]({ \color{red} \der{x}{l} }) = u([u/x]l). \] }
   \onslide<4->{
     \[ \xymatrix@C=0pt{
-        [& u & / & x &]({ \color{red} \der{x}{l} }) = u([u/x]l). \\
+        [& u & / & x &]({ \color{red} \der{x}{l} }) = & u([u/x]l). \\
         & \hspace{-2em} \text{ term } \ar@{.}@/_1pc/[u] &
         & \text{ not a term } \hspace{-4em} \ar@{.}@/^1pc/[u] & 
+        & \text{ different constructor } \hspace{-6em} \ar@{.}@/^1pc/[u]
       }
     \]
   }

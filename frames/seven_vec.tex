@@ -1,21 +1,22 @@
 \begin{frame}
-  \frametitle{Typing in $\olb$}
+  \frametitle{Typing in $\olb$ / sequent calculus LJT}
   
+  There are two different typing relations:
+  
+  \[ \Seqt{\Gamma}{t}{A} \qquad \text{and} \qquad \Seql{\Gamma}{A}{l}{B}. \]
+  
+  \onslide<2->{
+  \seprule
   \[
     \infer[Right]{\Seqt{\Gamma}{\lb x^A.t}{A\imp B}}{\Seqt{\Gamma,x:A}{t}{B}} \qquad
     \infer[Contr]{\Seqt{\Gamma,x:A}{\der{x}{l}}{B}}{\Seql{\Gamma,x:A}{A}{l}{B}} \qquad
     \infer[Cut]{\Seqt{\Gamma}{tl}{B}}{\Seqt{\Gamma}{t}{A} & \Seql{\Gamma}{A}{l}{B}}
   \]
-  \vspace{1em}
+  \vspace{1ex}
   \[
     \infer[Ax]{\Seql{\Gamma}{B}{\nil}{B}}{} \qquad
     \infer[Left]{\Seql{\Gamma}{A \imp B}{\cons{u}{l}}{C}}{\Seqt{\Gamma}{u}{A} & \Seql{\Gamma}{B}{l}{C}}
   \]
-
-  \vspace{2em}
-  
-  \onslide<2->{
-    Note the two different typing relations $\Seqt{\Gamma}{t}{A}$ and $\Seql{\Gamma}{A}{l}{B}$.
   }
   
 \end{frame}

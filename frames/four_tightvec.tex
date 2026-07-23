@@ -4,18 +4,18 @@
   \begin{definition}[Syntax of $\tolb$]
     \vspace{-1.5em} 
     \begin{align*}
-      \text{(terms)} \hspace{-5em} &&\quad t,u &::= \lb x.t \mid \der{x}{l} \mid (\lb x.t) (\cons ul) \\
+      \text{(terms)} \hspace{-5em} &&\quad t,u &::= \lb x.t \mid \der{x}{l} \mid {\color{blue} (\lb x.t) (\cons ul)} \\
       \text{(lists)} \hspace{-5em} &&\quad l   &::= \nil \mid \cons ul
     \end{align*}
     \vspace{-1.5em}
   \end{definition}
   
-  \onslide<2->{ In our tight systems, the generalised cut form $tl$ is replaced by $(\lb x.t) (\cons ul)$, creating the need of an operation on tight terms that propagates some cuts,
-    \[ @: terms \times lists \to terms. \] }
+  \onslide<2->{ In our tight systems, the generalised cut form $tl$ is restricted to ${\color{blue} (\lb x.t) (\cons ul)}$, creating the need of an append operation, 
+    \[ {\color{red} @}: terms \times lists \to terms. \] }
   \vspace{-1em}
   
-  \onslide<3->{ When defining a closed substitution, one has to further elaborate the variable equation:
-    \[ [u/x](\der{x}{l}) = u@([u/x]l). \] }
+  \onslide<3->{ The seen substitution equation has to be more sophisticated:
+    \[ [u/x](\der{x}{l}) = u {\color{red} @} ([u/x]l). \] }
   
 \end{frame}
 

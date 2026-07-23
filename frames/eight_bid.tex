@@ -1,6 +1,12 @@
 \begin{frame}
   \frametitle{Typing in $\ulb$}
-
+	
+  There are two different typing relations:
+	
+  \[ \SeqP{\Gamma}{P}{A} \qquad \text{and} \qquad \SeqE{\Gamma}{E}{B}. \]
+	
+  \onslide<2->{
+  \seprule
   \[
     \infer[Intro]{\SeqP{\Gamma}{\lb x^A.P}{A\imp B}}{\SeqP{\Gamma,x:A}{P}{B}} \qquad
     \infer{\SeqP{\Gamma}{\app{E}}{B}}{\SeqE{\Gamma}{E}{B}}
@@ -11,13 +17,8 @@
     \infer[Elim]{\SeqE{\Gamma}{EQ}{B}}{\SeqE{\Gamma}{E}{A\imp B} & \SeqP{\Gamma}{Q}{A}} \qquad
     \infer{\SeqE{\Gamma}{\hd{P}}{A}}{\SeqP{\Gamma}{P}{A}}
   \]
-
-  \vspace{2em}
-  
-  \onslide<2->{
-    Note the two different typing relations $\SeqP{\Gamma}{P}{A}$ and $\SeqE{\Gamma}{E}{B}$.
   }
-  
+   
 \end{frame}
 
 %%% Local Variables:
